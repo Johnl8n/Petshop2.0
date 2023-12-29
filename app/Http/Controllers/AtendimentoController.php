@@ -29,6 +29,7 @@ class AtendimentoController extends Controller
         $atendimento = new Atendimento;
         $atendimento->paciente_id = $request->paciente_id;
         $atendimento->servico_id = $request->servico;
+        $atendimento->user_id = auth()->id();
     
         $atendimento->save();
     

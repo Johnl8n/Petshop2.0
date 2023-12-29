@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('pacientes', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('user_id')->default(1);            
+            $table->foreign('user_id')->references('id')->on('users');
             $table->string('nome', 100);
             $table->string('raca');
             $table->string('especie');

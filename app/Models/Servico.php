@@ -18,6 +18,7 @@ class Servico extends Model
     
     }
 
+
     public function deleteWithAtendimentos()
     {
 

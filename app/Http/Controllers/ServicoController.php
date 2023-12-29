@@ -61,6 +61,7 @@ class ServicoController extends Controller
         $servico->nome = $request->nome;
         $servico->valor = $request->valor;
         $servico->descricao = $request->descricao;
+        $servico->user_id = auth()->id();
         $servico->save();
         
         return redirect('/meusservicos');

@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('servicos', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('user_id')->default(1);            
+            $table->foreign('user_id')->references('id')->on('users'); 
             $table->string('nome');
             $table->float('valor');
             $table->string('descricao');

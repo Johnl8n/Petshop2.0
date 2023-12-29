@@ -54,6 +54,7 @@ class PacienteController extends Controller
         $paciente->descricao = $request->descricao;
         $paciente->tutor = $request->tutor;
         $paciente->email = $request->email;
+        $paciente->user_id = auth()->id();
 
         if($request->hasFile('image') && $request->file('image')->isValid()){
           

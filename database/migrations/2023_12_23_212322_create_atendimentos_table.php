@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('atendimentos', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('user_id')->default(1);    
+            $table->foreign('user_id')->references('id')->on('users'); 
             $table->foreignId('paciente_id')->constrained();
             $table->foreignId('servico_id')->constrained();
             $table->enum('status', ['aberta', 'concluido']);

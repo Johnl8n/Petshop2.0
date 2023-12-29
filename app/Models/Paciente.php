@@ -12,6 +12,7 @@ class Paciente extends Model
     {
         return $this->hasMany(Atendimento::class);
     }
+    
 
     public function deleteWithAtendimentos()
     {
