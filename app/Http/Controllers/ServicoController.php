@@ -34,35 +34,25 @@ class ServicoController extends Controller
         $servico->save();
 
         return redirect('/meusservicos');
-   }
-
-//    public function destroy($id) {
-//         Servico::findOrFail($id)->delete();
-//         return redirect('/meusservicos');
-//    }
-
-   public function destroy($id) {
-
-    $servico = Servico::findOrFail($id);
- 
-    if ($servico->atendimentos()->count() > 0) {
-        return redirect('/meusservicos')->with('msg', 'Não é possível excluir o servico, pois está em uso!');
     }
+
+    public function destroy($id) {
+
+        $servico = Servico::findOrFail($id);
  
-    $servico->deleteWithAtendimentos();
+        if ($servico->atendimentos()->count() > 0) {
+            return redirect('/meusservicos')->with('msg', 'Não é possível excluir o servico, pois está em uso!');
+        }
  
-    return redirect('/meusservicos')->with('concluido', 'Servico excluido.');
-}
-
-
-
-
-
+        $servico->deleteWithAtendimentos();
+ 
+        return redirect('/meusservicos')->with('concluido', 'Servico excluido.');
+    }
 
 
     public function editar($id) {
-          $servico = Servico::findOrFail($id);
-          return view('events.editarServicos', ['servico' => $servico]);
+        $servico = Servico::findOrFail($id);
+        return view('events.editarServicos', ['servico' => $servico]);
     }
 
     public function atualizar(Request $request, $id) {

@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('atendimentos', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('paciente_id')->constrained(); // Corrigido para 'constrained'
-            $table->foreignId('servico_id')->constrained();  // Corrigido para 'constrained'
+            $table->foreignId('paciente_id')->constrained();
+            $table->foreignId('servico_id')->constrained();
             $table->enum('status', ['aberta', 'concluido']);
             $table->timestamps();
         });

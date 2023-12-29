@@ -17,7 +17,6 @@
     <h2>Buscado por: {{$search}} </h2>
   @else
   <h2>Aucientes</h2>
-  <!-- <a href="/pacientes/create" class="btn btn-dark mb-3">Adicionar novo Paciente</a> -->
   <p class="subtitle">Veja todos os pacientes cadastrados</p>
   @endif
   <div id="cards-container" class="row">

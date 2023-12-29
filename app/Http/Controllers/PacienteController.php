@@ -74,17 +74,12 @@ class PacienteController extends Controller
         return redirect('/')->with('concluido', 'uau, uau, agora estou cadastrado!');
    }
 
-// No controller
      public function show($id){
           $paciente = Paciente::findOrFail($id);
           return view('events.show', ['paciente' => $paciente]);
      
      }
 
-     // public function destroy($id) {
-     //      Paciente::findOrFail($id)->delete();
-     //      return redirect('/');
-     // }
 
      public function destroy($id) 
      {
@@ -104,7 +99,7 @@ class PacienteController extends Controller
           return view('events.editarPaciente', ['paciente' => $paciente]);
     }
 
-    public function atualizar(Request $request, $id) {
+     public function atualizar(Request $request, $id) {
         $paciente = Paciente::findOrFail($id);
         $paciente->nome = $request->nome;
         $paciente->raca = $request->raca;
@@ -116,8 +111,7 @@ class PacienteController extends Controller
         $paciente->save();
         
         return redirect('/')->with('editar', 'Paciente editado.');
-
-    }
+     }
      
 
 }
