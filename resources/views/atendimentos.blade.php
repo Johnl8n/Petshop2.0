@@ -14,21 +14,21 @@
                 <img src="/img/paciente/{{ $atendimento->paciente->image }}" alt="">
                 <div class="card-body">
                     <h5 class="card-nome">
-                        <i class="fas fa-user"></i> {{ $atendimento->paciente->nome }}
+                     {{ $atendimento->paciente->nome }}
                     </h5>
                     <p class="card-raca">
-                        <i class="fas fa-paw">Serviço: </i> {{ $atendimento->servico->nome }}
+                        Serviço: {{ $atendimento->servico->nome }}
                     </p>
                     <p class="card-raca">
-                        <i class="fas fa-paw">Tutor: </i> {{ $atendimento->paciente->tutor }}
+                        {{ $atendimento->paciente->tutor }}
                     </p>
                     <p class="card-raca">
-                        <i class="fas fa-paw">Status: </i> {{ $atendimento->status }}
+                        {{ $atendimento->status }}
                     </p>
                     <form method="POST" action="/atendimento/delete/{{ $atendimento->id }}">
                         @csrf
                         @method('DELETE')
-                        <button type="submit" class="btn btn-success mr-4 color-red">Atendimento Concluido</button>
+                        <button type="submit" class="btn btn-success mr-4 color-red">Concluir atendimento</button>
                     </form>
                 </div>
             </div>

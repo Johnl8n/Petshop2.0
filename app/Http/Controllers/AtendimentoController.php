@@ -35,22 +35,12 @@ class AtendimentoController extends Controller
         return redirect('/atendimentos/show');
     }
 
-    public function updateStatus(Request $request, $atendimentoId)
-    {
-        $atendimento = Atendimento::findOrFail($atendimentoId);
-        $atendimento->update(['status' => 'concluido']);
-    
-        Atendimento::orderBy('id', 'desc')->get()->each(function ($atendimento, $index) {
-            $atendimento->update(['status' => $index + 1]);
-        });
-    
-        return redirect()->back();
-    }
 
     public function destroy($id) {
         Atendimento::findOrFail($id)->delete();
 
-        return redirect('/atendimentos/show');
+        return redirect('/atendimentos/show')->with('concluido', 'humm, humm, espero que volte!');
+
     }
     
 

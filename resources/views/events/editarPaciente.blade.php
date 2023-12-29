@@ -46,7 +46,7 @@
 
         <div class="form-group">
             <label for="telefone">Email</label>
-            <input type="text" class="form-control" name="telefone" id="telefone" value=" {{ $paciente->email }} ">
+            <input type="text" class="form-control" name="email" id="email" value=" {{ $paciente->email }} ">
         </div>
 
         <button type="submit" class="btn btn-warning" id="button-nav">Salvar</button>

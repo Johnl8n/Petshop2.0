@@ -16,13 +16,13 @@
             <div class="form-group">
                 <label for="servico">Serviço: </label>
                 <select name="servico" class="form-control" id="servico">
-                    <option value="0">Serviços</option>
+                    <option value="" disabled selected>Selecione o serviço</option>
                     @foreach ($servicos as $servico)
                         <option value="{{$servico->id}}">{{$servico->nome}}</option>
                     @endforeach
                 </select>
             </div>
-            <input type="submit" class="btn btn-primary" value="Cadastrar Serviço">
+            <input type="submit" class="btn btn-primary" value="Cadastrar Atendimento">
         </form>
     </div>
 

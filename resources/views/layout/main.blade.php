@@ -23,7 +23,7 @@
         </div>
         <div class="menu">
             <a href="/pacientes/create" class="btn btn-primary" id="button-nav">Cadastrar Paciente</a>
-            <a href="/meusservicos" class="btn btn-primary m-2" id="button-nav">Serviços</a>
+            <a href="/meusservicos" class="btn btn-primary m-2" id="button-nav">Cadastrar Serviços</a>
             <a href="/atendimentos/show" class="btn btn-primary" id="button-nav">Atendimentos</a>
             <form method="POST" action="{{ route('logout') }}">
                 @csrf
@@ -51,7 +51,7 @@
         </div>
     </main>
     <footer>
-        <p>PetMania &copy; 2023</p>
+        <p>John &copy; 2023</p>
     </footer>
 
 </body>
