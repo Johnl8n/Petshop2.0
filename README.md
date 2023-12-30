@@ -54,5 +54,5 @@ Execute o Servidor
 
 ## Screenshots
 
-![App Screenshot](DER\DER.jpeg)
+![App Screenshot](/public/DER/DER.jpeg)
 
